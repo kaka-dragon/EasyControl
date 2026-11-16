@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- Outer metallic bezel gradient -->
+    <linearGradient id="bezelGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#b4bac0"/>
+      <stop offset="12%" stop-color="#62676f"/>
+      <stop offset="48%" stop-color="#22252a"/>
+      <stop offset="85%" stop-color="#141619"/>
+      <stop offset="100%" stop-color="#454950"/>
+    </linearGradient>
+
+    <!-- Inner titanium surface radial gradient -->
+    <radialGradient id="faceGrad" cx="0.5" cy="0.46" r="0.62">
+      <stop offset="0%" stop-color="#45494f"/>
+      <stop offset="38%" stop-color="#31353b"/>
+      <stop offset="76%" stop-color="#212429"/>
+      <stop offset="100%" stop-color="#17191d"/>
+    </radialGradient>
+
+    <!-- Subtle circular brushed sheen -->
+    <radialGradient id="sheenGrad" cx="0.5" cy="0.48" r="0.5">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.18"/>
+    </radialGradient>
+
+    <!-- Inner rim shadow -->
+    <linearGradient id="innerRim" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#e2e6eb" stop-opacity="0.55"/>
+      <stop offset="25%" stop-color="#7c828a" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.65"/>
+    </linearGradient>
+
+    <!-- Raised gunmetal glyph fill -->
+    <linearGradient id="glyphGrad" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#374851"/>
+      <stop offset="45%" stop-color="#222f36"/>
+      <stop offset="100%" stop-color="#121a1e"/>
+    </linearGradient>
+
+    <!-- Crisp bevel highlight on glyphs -->
+    <linearGradient id="glyphStroke" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b7c6ce" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#5a6c76" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#0b1013" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <filter id="dropShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>
+    </filter>
+
+    <filter id="glyphShadow" x="-12%" y="-12%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.72"/>
+    </filter>
+
+    <clipPath id="faceClip">
+      <rect x="118" y="118" width="788" height="788" rx="188" ry="188"/>
+    </clipPath>
+  </defs>
+
+  <!-- Outer Space-Metallic Squircle Chassis -->
+  <g filter="url(#dropShadow)">
+    <rect x="92" y="92" width="840" height="840" rx="208" ry="208" fill="url(#bezelGrad)"/>
+    <rect x="94" y="94" width="836" height="836" rx="206" ry="206" fill="none" stroke="url(#innerRim)" stroke-width="3"/>
+    <rect x="118" y="118" width="788" height="788" rx="188" ry="188" fill="url(#faceGrad)"/>
+  </g>
+
+  <!-- Brushed circular highlight texture -->
+  <g clip-path="url(#faceClip)">
+    <rect x="118" y="118" width="788" height="788" fill="url(#sheenGrad)"/>
+    <circle cx="512" cy="495" r="140" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1.5"/>
+    <circle cx="512" cy="495" r="220" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1.5"/>
+    <circle cx="512" cy="495" r="300" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1.5"/>
+    <circle cx="512" cy="495" r="380" fill="none" stroke="#000000" stroke-opacity="0.05" stroke-width="2"/>
+  </g>
+
+  <!-- Inner recessed bezel stroke -->
+  <rect x="118" y="118" width="788" height="788" rx="188" ry="188" fill="none" stroke="#0c0d10" stroke-opacity="0.7" stroke-width="4"/>
+
+  <!-- Precision EC + Crosshair Emblem -->
+  <g filter="url(#glyphShadow)" fill="url(#glyphGrad)" stroke="url(#glyphStroke)" stroke-width="3.5" stroke-linejoin="round">
+    <!-- E: Top-left segmented square -->
+    <rect x="268" y="330" width="58" height="54" rx="10" ry="10"/>
+
+    <!-- E: Top-right angled bar -->
+    <path d="M 348 330 L 500 330 L 456 384 L 348 384 Z"/>
+
+    <!-- E: Vertical stem + middle arm + bottom angled bar -->
+    <path d="M 268 408
+             L 326 408
+             L 326 466
+             L 446 466
+             L 446 518
+             L 326 518
+             L 326 598
+             L 456 598
+             L 502 652
+             L 292 652
+             Q 268 652 268 628
+             Z"/>
+
+    <!-- C: Open crosshair ring -->
+    <path d="M 744 402
+             A 150 150 0 1 0 744 580
+             L 702 544
+             A 96 96 0 1 1 702 438
+             Z"/>
+
+    <!-- Crosshair: Top vertical needle -->
+    <rect x="617" y="290" width="22" height="150" rx="4" ry="4"/>
+
+    <!-- Crosshair: Bottom vertical needle -->
+    <rect x="617" y="542" width="22" height="150" rx="4" ry="4"/>
+
+    <!-- Crosshair: Left horizontal needle -->
+    <rect x="520" y="480" width="76" height="22" rx="4" ry="4"/>
+
+    <!-- Crosshair: Right horizontal needle -->
+    <rect x="676" y="480" width="102" height="22" rx="4" ry="4"/>
+
+    <!-- Crosshair: Center bullseye -->
+    <circle cx="628" cy="491" r="24"/>
+  </g>
+</svg>
